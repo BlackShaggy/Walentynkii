@@ -168,7 +168,7 @@
             ctx.scale(0.75, 0.75);
             ctx.font = "15px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
             ctx.fillText("Dla najpiekniejszej Ksiezniczki ", 30, -5);
-            ctx.fillText("Kliknij mnie !!", 28, 10);
+            ctx.fillText("Kliknij mnie !!", 30, 10);
             ctx.restore();
         },
         clear: function() {
@@ -699,9 +699,9 @@
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
-            ctx.font = "12px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Click Me:) ", 30, -5);
-            ctx.fillText("Birthday Queen !", 28, 10);
+            ctx.font = "15px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
+            ctx.fillText("Dla najpiekniejszej Ksiezniczki ) ", 30, -5);
+            ctx.fillText("Kliknij mnie !!", 30, 10);
             ctx.restore();
         },
         clear: function() {
@@ -1064,3 +1064,4 @@
 
 
 })(window);
+
