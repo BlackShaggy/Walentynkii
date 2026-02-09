@@ -3,7 +3,6 @@
     function random(min, max) {
         return min + Math.floor(Math.random() * (max - min + 1));
     }
-
     function bezier(cp, t) {  
         var p1 = cp[0].mul((1 - t) * (1 - t));
         var p2 = cp[1].mul(2 * t * (1 - t));
@@ -167,8 +166,8 @@
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
-            ctx.font = "12px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Dla najpiekniejszej Ksiezniczki) ", 30, -5);
+            ctx.font = "15px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
+            ctx.fillText("Dla najpiekniejszej Ksiezniczki ", 30, -5);
             ctx.fillText("Kliknij mnie !!", 28, 10);
             ctx.restore();
         },
@@ -1062,5 +1061,6 @@
     window.bezier = bezier;
     window.Point = Point;
     window.Tree = Tree;
+
 
 })(window);
