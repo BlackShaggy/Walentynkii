@@ -3,6 +3,7 @@
     function random(min, max) {
         return min + Math.floor(Math.random() * (max - min + 1));
     }
+
     function bezier(cp, t) {  
         var p1 = cp[0].mul((1 - t) * (1 - t));
         var p2 = cp[1].mul(2 * t * (1 - t));
@@ -87,7 +88,7 @@
             point  : point,
             scale  : scale,
             color  : color,
-             : 5,
+            radius : 5,
         }
     }
     Seed.prototype = {
@@ -138,14 +139,14 @@
         drawCirle: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
             var point = cirle.point, color = cirle.color, 
-                scale = cirle.scale,  = cirle.;
+                scale = cirle.scale, radius = cirle.radius;
             ctx.save();
             ctx.fillStyle = color;
             ctx.translate(point.x, point.y);
             ctx.scale(scale, scale);
             ctx.beginPath();
             ctx.moveTo(0, 0);
-    	    ctx.arc(0, 0, , 0, 2 * Math.PI);
+    	    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
@@ -173,8 +174,8 @@
         },
         clear: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
-            var point = cirle.point, scale = cirle.scale, radius = 26;
-            var w = h = ( radius * scale);
+            var point = cirle.point, scale = cirle.scale, radius = 50;
+            var w = h = (radius * scale);
             ctx.clearRect(point.x - w, point.y - h, 4 * w, 4 * h);
         },
         hover: function(x, y) {
@@ -342,12 +343,12 @@
             }
         },
 
-        createBloom: function(width, height, , figure, color, alpha, angle, scale, place, speed) {
+        createBloom: function(width, height, radius, figure, color, alpha, angle, scale, place, speed) {
             var x, y;
             while (true) {
                 x = random(20, width - 20);
                 y = random(20, height - 20);
-                if (inheart(x - width / 2, height - (height - 40) / 2 - y, )) {
+                if (inheart(x - width / 2, height - (height - 40) / 2 - y, radius)) {
                     return new Bloom(this, new Point(x, y), figure, color, alpha, angle, scale, place, speed);
                 }
             }
@@ -426,12 +427,12 @@
         }
     }
 
-    Branch = function(tree, point1, point2, point3, , length, branchs) {
+    Branch = function(tree, point1, point2, point3, radius, length, branchs) {
         this.tree = tree;
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
-        this. = ;
+        this.radius = radius;
         this.length = length || 100;    
         this.len = 0;
         this.t = 1 / (this.length - 1);   
@@ -445,7 +446,7 @@
                 p = bezier([s.point1, s.point2, s.point3], s.len * s.t);
                 s.draw(p);
                 s.len += 1;
-                s. *= 0.97;
+                s.radius *= 0.97;
             } else {
                 s.tree.removeBranch(s);
                 s.tree.addBranchs(s.branchs);
@@ -460,7 +461,7 @@
             // ctx.shadowColor = 'rgb(35, 31, 32)';
             ctx.shadowBlur = 2;
         	ctx.moveTo(p.x, p.y);
-        	ctx.arc(p.x, p.y, s., 0, 2 * Math.PI);
+        	ctx.arc(p.x, p.y, s.radius, 0, 2 * Math.PI);
         	ctx.closePath();
         	ctx.fill();
         	// ctx.restore();
@@ -620,7 +621,7 @@
             point  : point,
             scale  : scale,
             color  : color,
-             : 5,
+            radius : 5,
         }
     }
     Seed.prototype = {
@@ -671,14 +672,14 @@
         drawCirle: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
             var point = cirle.point, color = cirle.color, 
-                scale = cirle.scale,  = cirle.;
+                scale = cirle.scale, radius = cirle.radius;
             ctx.save();
             ctx.fillStyle = color;
             ctx.translate(point.x, point.y);
             ctx.scale(scale, scale);
             ctx.beginPath();
             ctx.moveTo(0, 0);
-    	    ctx.arc(0, 0, , 0, 2 * Math.PI);
+    	    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
@@ -706,8 +707,8 @@
         },
         clear: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
-            var point = cirle.point, scale = cirle.scale, radius = 26;
-            var w = h = ( radius * scale);
+            var point = cirle.point, scale = cirle.scale, radius = 50;
+            var w = h = (radius * scale);
             ctx.clearRect(point.x - w, point.y - h, 4 * w, 4 * h);
         },
         hover: function(x, y) {
@@ -875,12 +876,12 @@
             }
         },
 
-        createBloom: function(width, height, , figure, color, alpha, angle, scale, place, speed) {
+        createBloom: function(width, height, radius, figure, color, alpha, angle, scale, place, speed) {
             var x, y;
             while (true) {
                 x = random(20, width - 20);
                 y = random(20, height - 20);
-                if (inheart(x - width / 2, height - (height - 40) / 2 - y, )) {
+                if (inheart(x - width / 2, height - (height - 40) / 2 - y, radius)) {
                     return new Bloom(this, new Point(x, y), figure, color, alpha, angle, scale, place, speed);
                 }
             }
@@ -959,12 +960,12 @@
         }
     }
 
-    Branch = function(tree, point1, point2, point3, , length, branchs) {
+    Branch = function(tree, point1, point2, point3, radius, length, branchs) {
         this.tree = tree;
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
-        this. = ;
+        this.radius = radius;
         this.length = length || 100;    
         this.len = 0;
         this.t = 1 / (this.length - 1);   
@@ -978,7 +979,7 @@
                 p = bezier([s.point1, s.point2, s.point3], s.len * s.t);
                 s.draw(p);
                 s.len += 1;
-                s. *= 0.97;
+                s.radius *= 0.97;
             } else {
                 s.tree.removeBranch(s);
                 s.tree.addBranchs(s.branchs);
@@ -993,7 +994,7 @@
             // ctx.shadowColor = 'rgb(35, 31, 32)';
             ctx.shadowBlur = 2;
         	ctx.moveTo(p.x, p.y);
-        	ctx.arc(p.x, p.y, s., 0, 2 * Math.PI);
+        	ctx.arc(p.x, p.y, s.radius, 0, 2 * Math.PI);
         	ctx.closePath();
         	ctx.fill();
         	// ctx.restore();
@@ -1062,12 +1063,4 @@
     window.Point = Point;
     window.Tree = Tree;
 
-
 })(window);
-
-
-
-
-
-
-
