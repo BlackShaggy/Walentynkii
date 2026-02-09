@@ -81,4 +81,7 @@ a {
   font-size: 25px;
   font-family: monospace;
 
+body {
+    overflow: hidden;
+}
 }
