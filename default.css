@@ -3,7 +3,7 @@ body {
   padding: 0;
   background-color: #000; /* solid black background, images removed */
   color: white;
-  font-size: 14px;
+  font-size: 12px;
   font-family: sans-serif;
   overflow: auto;
 }
@@ -85,6 +85,7 @@ body {
     overflow: hidden;
 }
 }
+
 
 
 
