@@ -22,8 +22,8 @@ a {
   margin-top: 10px;
 }
 #text {
-  width: 272px;
-  height: 648px;
+  width: 350px;
+  height: 600px;
   left: 100px;
   top: 80px;
   position: absolute;
@@ -85,6 +85,7 @@ body {
     overflow: hidden;
 }
 }
+
 
 
 
