@@ -174,7 +174,7 @@
         },
         clear: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
-            var point = cirle.point, scale = cirle.scale, radius = 25;
+            var point = cirle.point, scale = cirle.scale, radius = 30;
             var w = h = (radius * scale);
             ctx.clearRect(point.x - w, point.y - h, 4 * w, 4 * h);
         },
@@ -707,7 +707,7 @@
         },
         clear: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
-            var point = cirle.point, scale = cirle.scale, radius = 25;
+            var point = cirle.point, scale = cirle.scale, radius = 30;
             var w = h = (radius * scale);
             ctx.clearRect(point.x - w, point.y - h, 4 * w, 4 * h);
         },
@@ -1064,4 +1064,5 @@
     window.Tree = Tree;
 
 })(window);
+
 
