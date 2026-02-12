@@ -662,7 +662,7 @@
             ctx.beginPath();
             ctx.moveTo(0, 0);
             for (var i = 0; i < heart.figure.length; i++) {
-                var p = heart.figure.get(i, scale);
+                var p = heart.figure.get(i, scale * 2);
                 ctx.lineTo(p.x, -p.y);
             }
             ctx.closePath();
@@ -700,9 +700,9 @@
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
-            ctx.font = "50px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Dla najpiękniejszej Księżniczki ", 30, -5);
-            ctx.fillText("Kliknij mnie !!", 30, 10);
+            ctx.font = "15px Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
+            ctx.fillText("Dla najpiękniejszej Księżniczki ", 50, -15);
+            ctx.fillText("Kliknij mnie !!", 50, 10);
             ctx.restore();
         },
         clear: function() {
@@ -1064,6 +1064,7 @@
     window.Tree = Tree;
 
 })(window);
+
 
 
 
