@@ -3,7 +3,7 @@ body {
   padding: 0;
   background-color: #000; /* solid black background, images removed */
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-family: sans-serif;
   overflow: auto;
 }
@@ -82,6 +82,7 @@ a {
   font-family: monospace;
 
 }
+
 
 
 
