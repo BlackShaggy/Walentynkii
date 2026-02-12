@@ -167,7 +167,7 @@
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
-            ctx.font = "15px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
+            ctx.font = "18px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
             ctx.fillText("Dla najpiękniejszej Księżniczki ", 30, -5);
             ctx.fillText("Kliknij mnie !!", 30, 10);
             ctx.restore();
@@ -700,7 +700,7 @@
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
-            ctx.font = "15px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
+            ctx.font = "18px,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
             ctx.fillText("Dla najpiękniejszej Księżniczki ", 30, -5);
             ctx.fillText("Kliknij mnie !!", 30, 10);
             ctx.restore();
@@ -1064,6 +1064,7 @@
     window.Tree = Tree;
 
 })(window);
+
 
 
 
