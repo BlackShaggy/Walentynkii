@@ -658,7 +658,7 @@
                 scale = heart.scale;
             ctx.save();
             ctx.fillStyle = color;
-            ctx.translate(point.x, point.y);
+            ctx.translate(point.x-40, point.y);
             ctx.beginPath();
             ctx.moveTo(0, 0);
             for (var i = 0; i < heart.figure.length; i++) {
@@ -695,14 +695,14 @@
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
     	    ctx.lineTo(25, 25);
-    	    ctx.lineTo(215, 25);
+    	    ctx.lineTo(205, 25);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "15px Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Dla najpiękniejszej Księżniczki ", 50, -5);
-            ctx.fillText("Kliknij mnie !!", 50, 20);
+            ctx.fillText("Dla najpiękniejszej Księżniczki ", 35, -5);
+            ctx.fillText("Kliknij mnie !!", 35, 20);
             ctx.restore();
         },
         clear: function() {
@@ -1064,6 +1064,7 @@
     window.Tree = Tree;
 
 })(window);
+
 
 
 
