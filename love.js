@@ -694,15 +694,15 @@
             ctx.translate(point.x, point.y);
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
-    	    ctx.lineTo(15, 15);
-    	    ctx.lineTo(130, 15);
+    	    ctx.lineTo(25, 25);
+    	    ctx.lineTo(215, 25);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "15px Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Dla najpiękniejszej Księżniczki ", 50, -15);
-            ctx.fillText("Kliknij mnie !!", 50, 10);
+            ctx.fillText("Dla najpiękniejszej Księżniczki ", 50, -5);
+            ctx.fillText("Kliknij mnie !!", 50, 20);
             ctx.restore();
         },
         clear: function() {
@@ -1064,6 +1064,7 @@
     window.Tree = Tree;
 
 })(window);
+
 
 
 
